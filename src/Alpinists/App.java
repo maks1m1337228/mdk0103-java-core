@@ -10,7 +10,20 @@ public class App {
         alpinists[1] = new Alpinists.Alpinist("Tony", 54, "Ohio");
         alpinists[2] = new Alpinists.Alpinist("Sasha", 19, "Moskow");
 
-        Alpinists.Mountain everest = new Alpinists.Mountain("Everest", "Nepal", 8848, false, alpinists);
+        new Alpinists.Alpinist("kek", 19, "Moskow");
+
+        Alpinists.Alpinist[] alpinists2= new Alpinists.Alpinist[3];
+
+        Alpinist vasya = new Alpinist("Vasya", 22, "spb");
+        vasya.getAddress();
+        vasya.setAddress("Msc");
+        vasya.getAddress();
+
+
+
+
+//        Alpinists.Mountain everest = new Alpinists.Mountain("Everest", "Nepal", 8848, false, alpinists);
+//        Alpinists.Mountain alps = new Alpinists.Mountain("Alps", "France", 4810, true, alpinists2 );
     }
 }
 
