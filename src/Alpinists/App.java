@@ -5,25 +5,19 @@ import Alpinists.Mountain;
 
 public class App {
     public static void main(String[] args) {
-        Alpinists.Alpinist[] alpinists = new Alpinists.Alpinist[3];
-        alpinists[0] = new Alpinists.Alpinist("Petya", 12, "Toilet");
-        alpinists[1] = new Alpinists.Alpinist("Tony", 54, "Ohio");
-        alpinists[2] = new Alpinists.Alpinist("Sasha", 19, "Moskow");
+        Alpinist[] alpinists = new Alpinist[3];
+        alpinists[0] = new Alpinist("Petya", 12, "Toilet");
+        alpinists[1] = new Alpinist("Tony", 54, "Ohio");
+        alpinists[2] = new Alpinist("Sasha", 19, "Moscow");
 
-        new Alpinists.Alpinist("kek", 19, "Moskow");
+        Groups group = new Groups(true, new Alpinist[5], "Everest");
 
-        Alpinists.Alpinist[] alpinists2= new Alpinists.Alpinist[3];
-
-        Alpinist vasya = new Alpinist("Vasya", 22, "spb");
-        vasya.getAddress();
-        vasya.setAddress("Msc");
-        vasya.getAddress();
-
-
-
-
-//        Alpinists.Mountain everest = new Alpinists.Mountain("Everest", "Nepal", 8848, false, alpinists);
-//        Alpinists.Mountain alps = new Alpinists.Mountain("Alps", "France", 4810, true, alpinists2 );
+        // Добавляем альпинистов в группу
+        group.addToGroup(alpinists[0]);
+        group.addToGroup(alpinists[1]);
+        group.addToGroup(alpinists[2]);
     }
-}
+
+    }
+
 

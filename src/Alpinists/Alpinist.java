@@ -20,8 +20,9 @@ public class Alpinist {
     public void setAddress(String address) {
         this.address = address;
     }
-    public void getName() {
-        System.out.println(name);
+    public String getName() {
+
+        return name;
     }
 
     public void setName(String name) {
