@@ -1,14 +1,13 @@
 package Fitness;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 public class Abonement {
     private Visitor owner;
-    private Date registrationDate;
-    private Date expirationDate;
+    private LocalDate registrationDate;
+    private LocalDate expirationDate;
 
-    public Abonement(Visitor owner, Date registrationDate, Date expirationDate) {
+    public Abonement(Visitor owner, LocalDate registrationDate, LocalDate expirationDate) {
         this.owner = owner;
         this.registrationDate = registrationDate;
         this.expirationDate = expirationDate;
@@ -18,11 +17,11 @@ public class Abonement {
         return owner;
     }
 
-    public Date getRegistrationDate() {
+    public LocalDate getRegistrationDate() {
         return registrationDate;
     }
 
-    public Date getExpirationDate() {
+    public LocalDate getExpirationDate() {
         return expirationDate;
     }
 }
