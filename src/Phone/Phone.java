@@ -37,6 +37,8 @@ import java.util.Random;
         public static ArrayList<Phone> addPhones(int count) {
             ArrayList<Phone> phones = new ArrayList<>();
             Random random = new Random();
+            String[] names = {"Egor",  "Albert", "Max", "Luna", "Ramzik", "Azamat", "George", "Peppa", "Donatello", "Rafaello"};
+
             for (int i = 0; i < count; i++) {
                 int serialNumber = 300 + i;
                 String model = "Iphone";

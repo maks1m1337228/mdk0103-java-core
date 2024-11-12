@@ -11,6 +11,6 @@ public class App {
         Collections.sort(phonesArrayList, Comparator.comparingInt(Phone::getPrice).thenComparingInt(Phone::getWeight));
 
 
-        System.out.println(phonesArrayList); //оно почему-то сортируется только по прайсу а по весу не хочет я не знаю чо делать
+        System.out.println(phonesArrayList);
     }
 }
