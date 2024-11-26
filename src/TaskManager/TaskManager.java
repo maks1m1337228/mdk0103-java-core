@@ -8,12 +8,42 @@ public class TaskManager {
     private static final List<Task> recentTasks = new LinkedList<>();
 
 
+
+
     static void menu() {
         System.out.println("1. добавить задачу");
         System.out.println("2. посмтореть задачи");
         System.out.println("3. посмотреть недавние задачи");
         System.out.println("\n4. выход");
 
+    }
+
+    static void startMenu() {
+        Scanner scanner = new Scanner(System.in);
+        while (true) {
+            menu();
+            System.out.print("введите номер действия");
+            int choice = scanner.nextInt();
+            scanner.nextLine();
+
+            switch (choice) {
+
+                case 1:
+                    addTask(scanner);
+                    break;
+                case 2:
+                    viewTasks(scanner);
+                    break;
+                case 3:
+                    viewRecentTasks();
+                    break;
+                case 4:
+                    scanner.close();
+                    return;
+                default:
+                    System.out.println("неверный выбор!");
+            }
+        }
     }
 
     static void addTask(Scanner scanner) {
