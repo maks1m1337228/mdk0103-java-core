@@ -14,9 +14,9 @@ public class App {
         Courier courier5 = new Courier("Оаы", "Аяо", 34, new ArrayList<Order>());
         Courier courier6 = new Courier("Тандыр", "Мухаматов", 19, new ArrayList<Order>());
 
-        Baker baker1 = new Baker("Арсен", "Маркарян", 32, 6, new ArrayList<Order>());
-        Baker baker2 = new Baker("Сергей", "Юсупов", 39, 10, new ArrayList<Order>());
-        Baker baker3 = new Baker("Евлампий", "Мухохват", 32, 15, new ArrayList<Order>());
+        Baker baker1 = new Baker("Арсен", "Маркарян", 32,  new ArrayList<Order>());
+        Baker baker2 = new Baker("Сергей", "Юсупов", 39,  new ArrayList<Order>());
+        Baker baker3 = new Baker("Евлампий", "Мухохват", 32,  new ArrayList<Order>());
 
         Pizza pizza1 = new Pizza("Маргарита");
         Pizza pizza2 = new Pizza("Пеперони");
@@ -33,16 +33,24 @@ public class App {
 
 
         Order order1 = new Order(new ArrayList<Pizza>());
+        Order order2 = new Order(new ArrayList<Pizza>());
+
+
 
         order1.pizzaAddToOrder(pizza1);
         order1.pizzaAddToOrder(pizza2);
 
-        order1.printOrder();
+        order2.pizzaAddToOrder(pizza9);
+        order2.pizzaAddToOrder(pizza10);
+
+
 
 
         baker1.addOrderToBaker(order1);
+        baker2.addOrderToBaker(order2);
 
         courier1.getOrderFromStorage(order1);
+        courier4.getOrderFromStorage(order2);
 
 
 
