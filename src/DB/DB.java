@@ -1,11 +1,6 @@
 package DB;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Statement;
-
-
+import java.sql.*;
 
 
 public class DB {
@@ -66,16 +61,25 @@ public class DB {
     }
 
     public void SelectFromTable(String tableName) throws SQLException, ClassNotFoundException {
-        String sql = "SELECT * FROM " + tableName;
         Statement statement = getDBConnection().createStatement();
-        statement.executeUpdate(sql);
+        ResultSet resultSet = statement.executeQuery("SELECT * FROM " + tableName);
+        while (resultSet.next()) {
+            int id1 = resultSet.getInt(1);
+            String text1 = resultSet.getString(2);
+            String text2 = resultSet.getString(3);
+            System.out.printf("%d. %s. %s. \n", id1, text1, text2);
+
+        }
     }
+    
 
     public void DeleteFromTable(String tableName) throws SQLException, ClassNotFoundException {
         String sql = "DROP TABLE " + tableName;
         Statement statement = getDBConnection().createStatement();
         statement.executeUpdate(sql);
     }
+
+
 
 
 

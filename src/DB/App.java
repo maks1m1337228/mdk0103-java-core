@@ -20,7 +20,7 @@ public class App {
         //db.InsertTable3("library", "1", "Alexandiyskaya", "1");
 
 
-        db.DeleteFromTable("publisher");
+        db.SelectFromTable("publisher");
 
 
 

@@ -1,19 +1,23 @@
 package BankAccount;
 
-import java.util.Random;
+import java.sql.SQLException;
+import java.util.Scanner;
 
 public class Account {
     private String accountNumber;
-    private double balance;
+    private static double balance;
+
+    private DB db;
+
 
 
     public Account(String accountNumber, double balance) {
-        this.accountNumber = generateNumber();
-        this.balance = balance;
+        this.db = db;
+        this.accountNumber = accountNumber;
 
     }
 
-    private String generateNumber() {
+    /* private String generateNumber() {
         Random random = new Random();
         StringBuilder builder = new StringBuilder();
         for (int i = 0; i < 20; i++) {
@@ -23,24 +27,21 @@ public class Account {
         }
         return builder.toString();
     }
+*/
 
-    public double getBalance() {
-        return balance;
-    }
 
-    public String getAccountNumber() {
-        return accountNumber;
-    }
 
-public static void transferMoney(Account sender, Account recipient, double amount) {
-        if(sender == null || recipient == null) {
-            throw new IllegalArgumentException("не может быть пустым");
-        }
-        if(amount <=0) {
-            throw new IllegalArgumentException("должно быть больше нуля");
-        }
-        sender.withdraw(amount);
-        recipient.addToBalance(amount);
+
+public void transferMoney(Account sender, int recipient, double amount) throws SQLException, ClassNotFoundException {
+    double balance = db.SelectFromTable("basicclient", sender);
+    System.out.println("from trtansfder money " + balance);
+
+
+    Scanner scanner = new Scanner(System.in);
+
+
+
+
     }
 
     public void addToBalance(double amount) {
@@ -57,7 +58,7 @@ public static void transferMoney(Account sender, Account recipient, double amoun
         }
         this.balance -= amount;
     }
-    private static void payService(Client client, double amount) {
+    public static void payService(Client client, double amount) {
         if (amount <= 0) {
             throw new IllegalArgumentException("должно быть больше нуля");
         }
@@ -70,7 +71,9 @@ public static void transferMoney(Account sender, Account recipient, double amoun
         client.getAccount().addToBalance(cashbackAmount);
     }
 
-
+    public static double getBalance() {
+        return balance;
+    }
 
     @Override
     public String toString() {
