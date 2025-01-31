@@ -17,23 +17,12 @@ public class Account {
 
     }
 
-    /* private String generateNumber() {
-        Random random = new Random();
-        StringBuilder builder = new StringBuilder();
-        for (int i = 0; i < 20; i++) {
-            builder.append(random.nextInt(9));
 
-
-        }
-        return builder.toString();
-    }
-*/
 
 
 
 
 public void transferMoney(Account sender, int recipient, double amount) throws SQLException, ClassNotFoundException {
-    double balance = db.SelectFromTable("basicclient", sender);
     System.out.println("from trtansfder money " + balance);
 
 
