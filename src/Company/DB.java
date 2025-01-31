@@ -48,7 +48,7 @@ public class DB {
 
     }
 
-    public void selectJoin() throws SQLException, ClassNotFoundException {
+    public void selectWithJoin() throws SQLException, ClassNotFoundException {
         Statement statement = getDBConnection().createStatement();
         ResultSet resultSet = statement.executeQuery("SELECT deliveries.delivery_id, deliveries.delivery_date, deliveries.delivery_status, partners.partner_name FROM deliveries JOIN partners on deliveries.partner_id = partners.partner_id;\n");
         while (resultSet.next()) {
