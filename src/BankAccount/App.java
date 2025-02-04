@@ -1,12 +1,33 @@
 package BankAccount;
 
+import javax.swing.*;
+import java.awt.*;
 import java.sql.SQLException;
 
 public class App {
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
 
         DB db = new DB();
-        Menu menu = new Menu(db);
+
+        SwingUtilities.invokeLater(() -> {
+            GUI bankGUI = new GUI(db);
+            // Передача DB в BankGUI
+        });
+        //Menu menu = new Menu(db);
+
+        /*JFrame frame = new JFrame();
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setResizable(false);
+        frame.setSize(700, 1000); // размеры окна
+        frame.setLocationRelativeTo(null); // окно - в центре экрана
+        JButton enterButton = new JButton("Войти"); // Экземпляр класса JButton
+        enterButton.setMaximumSize(new Dimension(150, 50));
+        enterButton.setBackground(Color.white);
+        enterButton.setOpaque(true);  // Важно!  Нужно установить opaque в true
+
+        // getContentPane() - клиентская область окна
+        frame.getContentPane().add(enterButton); // Добавляем кнопку на Frame
+        frame.setVisible(true); // Делаем окно видимым
 
 
 
@@ -34,10 +55,10 @@ public class App {
  */
 
         //Menu.mainMenu();
-        db.isConnection();
-        db.CreateTable("BasicClient", "account_number SERIAL PRIMARY KEY", "full_name VARCHAR(200)", "balance DECIMAL(20,2)");
-        db.CreateTable("PremiumClient", "account_number SERIAL PRIMARY KEY", "full_name VARCHAR(200)", "balance DECIMAL(20,2)");
-        db.CreateTable("VIPClient", "account_number SERIAL PRIMARY KEY", "full_name VARCHAR(200)", "balance DECIMAL(20,2)");
+       // db.isConnection();
+        //db.CreateTable("BasicClient", "account_number SERIAL PRIMARY KEY", "full_name VARCHAR(200)", "balance DECIMAL(20,2)");
+        //db.CreateTable("PremiumClient", "account_number SERIAL PRIMARY KEY", "full_name VARCHAR(200)", "balance DECIMAL(20,2)");
+        //db.CreateTable("VIPClient", "account_number SERIAL PRIMARY KEY", "full_name VARCHAR(200)", "balance DECIMAL(20,2)");
 
         /*db.InsertTable("BasicClient", "1", "Охложон Бобиев Магамедочив", "200.00");
         db.InsertTable("BasicClient", "2", "Бабомурод Бобиев Магамедочив", "300.00");
@@ -57,7 +78,7 @@ public class App {
         db.InsertTable("VIPClient", "14", "Илон Рив Маск", "890000000.00");
         db.InsertTable("VIPClient", "15", "Брюс Вейн Бетмен", "200000000.00");
 */
-      menu.mainMenu();
+      //menu.mainMenu();
 
 
 

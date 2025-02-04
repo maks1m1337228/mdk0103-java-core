@@ -47,14 +47,14 @@ public class DB {
         return balance;
     }
 
-    public void UpdateTablePlus(String tableName,int balance, int account, int amount) throws SQLException, ClassNotFoundException {
+    public void UpdateTablePlus(String tableName, int account, int amount) throws SQLException, ClassNotFoundException {
         String sql = "UPDATE " + tableName + " SET balance = (SELECT balance from " + tableName + " WHERE account_number = " + account + ") + " + amount + " WHERE account_number = " + account;
         Statement statement = getDBConnection().createStatement();
         statement.executeUpdate(sql);
 
     }
 
-    public void UpdateTableMinus(String tableName,int balance, int account, int amount) throws SQLException, ClassNotFoundException {
+    public void UpdateTableMinus(String tableName, int account, int amount) throws SQLException, ClassNotFoundException {
         String sql = "UPDATE " + tableName + " SET balance = (SELECT balance from " + tableName + " WHERE account_number = " + account + ") - " + amount + " WHERE account_number = " + account;
         Statement statement = getDBConnection().createStatement();
         statement.executeUpdate(sql);

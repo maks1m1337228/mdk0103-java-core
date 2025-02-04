@@ -9,6 +9,6 @@ public class App {
         //db.insertPartners("1", "Apple", "911 apple@icloud.com");
         //db.UpdatePartners("1", "apple", "microsoft@outlook.com");
         //db.selectPartners();
-        db.selectJoin();
+        //db.selectJoin();
     }
 }
